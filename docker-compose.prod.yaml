@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+          web:
+             container_name: journeys-frontend
+             build:
+                 context: .
+                 dockerfile: Dockerfile.prod
+             ports:
+                 - "3012:3000"
+             command: sh -c "cd /app && serve -s build"
+             env_file:
+               -  .env.production
+

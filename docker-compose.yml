@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+          app:
+              container_name: journeys-frontend
+              image: journeys-frontend
+              command : sh -c "ls build/ && serve -s build"
+              ports:
+                  - 3020:3000
+              build:
+                  context: .

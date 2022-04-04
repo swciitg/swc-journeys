@@ -1,0 +1,42 @@
+// Here you can add other styles
+.searchbtn:hover{
+    
+        background-color: #005b54; /* Green */
+        color: white;
+        border-color: white;
+        border:2px solid
+      
+}
+.searchbtn{
+    border-color: #005b54;
+    background-color: white; /* Green */
+    color: #005b54;
+    border:2px solid
+  
+}
+.addBookmarkButton{
+    cursor:"pointer";
+    position:"relative";
+    margin-right:"30px";
+}
+.greenbtn{
+    background-color: #005b54; /* Green */
+    color: white;
+    border:2px solid;
+    border-color: white;
+}
+.greenbtn:hover{
+    background-color: #019286; /* Green */
+    color: white;
+    border:2px solid;
+    border-color: white;
+}
+
+.dropdown:active{
+    background-color: #005b54; /* Green */
+    color: white;
+}
+
+.spinner{
+    color:#005b54
+}
