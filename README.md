@@ -2,6 +2,44 @@ SWC Journeys API
 
 A community website which allows users to form communities to learn and share new skills. It allows users to save any blog read online and share among communities and recommends related content to users. A timeline feature in which users can keep track of their journey of the project or skill they started and share them with others. 
 
+# How you can contribute:
+You can join our discussions and keep up with us on [Discord channel #swc-journeys](https://discord.gg/ME6mWhjF)!
+
+1.Using the issue tracker.
+
+2.Claim issue.
+
+3.Changing the code-base.
+
+4.Submit pull request.
+
+5.Suggest design improvements for our apps.
+
+6.Review our projects’ pull requests.
+
+7.Help others contribute by answering their questions and participate on GitHub.
+
+# Guidance on how to contribute
+
+## USING THE ISSUE TRACKER: 
+
+Use the issue tracker to suggest feature requests, report bugs, and ask questions. This is also a great way to connect with the developers of the project as well as others who are interested in this solution.
+Use the issue tracker to find ways to contribute. Find a bug or a feature, mention in the issue that you will take on that effort, then follow the Changing the code-base guidance below.
+
+Click [here](https://www.stevejgordon.co.uk/working-on-your-first-github-issue) to learn more
+
+## CLAIM ISSUE:
+
+Claim the issue by commenting. If someone else has claimed it, ask if they've opened a pull request already and if they're stuck -- maybe you can help them solve a problem or move it along!.
+Unless the issue is marked as reserved for someone, you can just say "I'd like to try this!" and then you've claimed it - no need to wait for someone to assign it to you. Just be sure you link [your pull request](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) (PR) to this issue so we can see where your solution is.
+
+## CHANGING CODE BASE:
+
+You should [fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo), make changes in your own fork. All new code should have associated unit tests that validate implemented features and the presence or lack of defects. 
+
+## SUBMIT PULL REQUEST:
+
+Submit a pull request after making changes. Check if all tasks are completed under the issue. Your changes will be reviewed and decided if it needs to be merged in the main branch.
 
 PROJECT BRIEF: 
 
