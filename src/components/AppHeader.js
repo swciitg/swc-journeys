@@ -68,7 +68,7 @@ const AppHeader = () => {
   const [visible, setVisible] = useState(false)
   return (
     <>
-      <div id="firstBtn" onClick={() => setVisible(!visible)} style={{ cursor:"pointer", position:"relative", marginRight:"30px",}}>
+      <div id="firstBtn" onClick={() => setVisible(!visible)} title="Add new bookmark" style={{ cursor:"pointer", position:"relative", marginRight:"30px",}}>
         <CIcon icon={cilBookmark} size="xxl" />
         <CIcon style={{position:"absolute", color:"#005b54",top:"-13px", left:"20px", marginBottom:"30px"}} icon={cilPlus} size="lg" />
       </div>
@@ -101,7 +101,7 @@ const AddTimelineButton = () => {
   const [visible, setVisible] = useState(false)
   return (
     <>
-      <div id="secondBtn" onClick={() => setVisible(!visible)} style={{ cursor:"pointer", position:"relative", marginRight:"30px",}}>
+      <div id="secondBtn" onClick={() => setVisible(!visible)} title="Add new timeline" style={{ cursor:"pointer", position:"relative", marginRight:"30px",}}>
         <CIcon icon={cilFork} size="xxl" />
         <CIcon style={{position:"absolute", color:"#005b54",top:"-13px", left:"20px", marginBottom:"30px"}} icon={cilPlus} size="lg" />
       </div>
