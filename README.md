@@ -13,7 +13,7 @@ You can join our discussions and keep up with us on [Discord channel #swc-journe
 
 4.Submit pull request.
 
-5.Suggest design improvements for our apps.
+5.Suggest design improvements for our apps and create issues if found.
 
 6.Review our projects’ pull requests.
 
