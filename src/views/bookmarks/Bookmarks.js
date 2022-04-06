@@ -29,9 +29,9 @@ const Bookmarks = () => {
   }
 
   return (<>
-  
     <Tour/>
-    {bookmarks != null ? (<><CRow xs={{ cols: 1, gutter: 4 }} md={{ cols: 4 }}>
+    {bookmarks != null ? bookmarks.length ?
+      (<><CRow xs={{ cols: 1, gutter: 4 }} md={{ cols: 4 }}>
       {bookmarks && bookmarks.map((book, index) => (
         <div key={book.id} style={{ marginTop: '35px' }}>
           <BookmarkCard book={book} />
@@ -62,7 +62,7 @@ const Bookmarks = () => {
         </div>
       </CPagination>
     </>
-    ) : <CSpinner className='spinner' />}
+    ) : <span>Create your first bookmark</span> : <CSpinner className='spinner' /> }
   </>);
 }
 export default Bookmarks;
