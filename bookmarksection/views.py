@@ -23,7 +23,7 @@ class BookmarkListDetailFilter(ListAPIView):
     queryset = Bookmark.objects.all()
     serializer_class = BookmarkSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['title_name','tags']
+    search_fields = ['title_name','tags', 'description']
     def get_queryset(self):
         if getattr(self, 'swagger_fake_view', False):
         # queryset just for schema generation metadata
