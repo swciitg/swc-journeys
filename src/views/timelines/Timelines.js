@@ -30,7 +30,7 @@ const Timelines = () => {
   }
 
   return (<>
-    {timelines != null ? (<><CRow>
+    {timelines != null ? timelines.length? (<><CRow>
       {timelines && timelines.map((time, index) => (
         <TimelineCard key={time.id} time={time} />
       ))}
@@ -58,7 +58,7 @@ const Timelines = () => {
           }
         </div>
       </CPagination>
-    </>) : <CSpinner className="spinner" />}
+    </>): <span>Create your first timeline</span> : <CSpinner className="spinner" />}
   </>);
 }
 export default Timelines;
