@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "name": "SWC Journeys",
   "description": "Save bookmark",
@@ -8,9 +8,10 @@
     "service_worker": "background.js"
   },
   "icons": { "128": "Group.png" },
-  "browser_action": {
+  "action": {
     "default_icon": "Group.png",
     "default_popup": "popup.html"
   },
-  "permissions": ["activeTab", "cookies", "http://*/*","https://*/*"]
+  "permissions": ["activeTab", "cookies", "scripting", "notifications", "storage"],
+  "host_permissions": ["http://*/*", "https://*/*"]
 }

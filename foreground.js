@@ -1,5 +1,5 @@
 // document.querySelector('#hplogo').classList.add('spinspinspin');
-chrome.runtime.sendMessage({message: window.location.href});
+// chrome.runtime.sendMessage({message: window.location.href});
 // const first = document.createElement('button');
 // first.innerText = "SET DATA";
 // first.id = "first";

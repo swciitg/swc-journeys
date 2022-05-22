@@ -1,46 +1,38 @@
 const button = document.getElementById("1");
 
-button.addEventListener('click', () => {
-    button.classList.add('disabled');
-    chrome.tabs.query({ active: true }, function (tabs) {
-        var tab = tabs[0];
-        tab_title = tab.title;
-        chrome.tabs.executeScript(tab.id, {
-            code: 'window.location.href'
-        }, (url_field) => {
-            chrome.cookies.get({ url: 'https://swc.iitg.ac.in/journeys', name: 'access' },
-                function (cookie) {
-                    if (cookie) {
-                        console.log(cookie.value);
-                        let accessToken = cookie.value;
-                        var Http = new XMLHttpRequest();
-                        var apiUrl = "https://swc.iitg.ac.in/swc_journeys/bookmarksection/bookmarkApi/";
-                        Http.open("POST", apiUrl, true);
-                        Http.setRequestHeader('Authorization', 'Bearer ' + accessToken);
-                        Http.setRequestHeader('Content-type', 'application/json');
-                        Http.onreadystatechange = function () {//Call a function when the state changes.
-                            button.innerHTML = Http.status;
-                            //document.getElementById("2").innerHTML = Http.responseText;
-                            if (Http.readyState == 4 && Http.status == 201) {
-                                button.innerHTML = "URL SAVED";
-                                // alert(Http.responseText);
-                            }
-                            if (Http.readyState == 4 && Http.status == 400) {
-                                button.innerHTML = "ERROR";
-                                // alert(Http.responseText);
-                            }
-                        }
-                        var bookmarkurl = String(url_field);
-                        console.log(bookmarkurl);
-                        var data = JSON.stringify({ 'url_field': bookmarkurl});
-                        Http.send(data);
-                    }
-                    else {
-                        window.open("https://swc.iitg.ac.in/journeys/login", width=100, height=100)
-                        console.log('Can\'t get cookie! Check the name!');
-                    }
-                })
-        });
-    });
-});
+const setCookie = () => {
+    window.open("https://swc.iitg.ac.in/journeys/login", width=100, height=100)
+}
 
+const handleButtonClick = async () => {
+ 
+    button.classList.add('disabled');
+ 
+    let cookie = await chrome.cookies.get({ url: 'https://swc.iitg.ac.in/journeys', name: 'access' })
+    
+    if(!(cookie?.value)) {
+        setCookie();
+    }
+    
+    cookie = await chrome.cookies.get({ url: 'https://swc.iitg.ac.in/journeys', name: 'access' })
+    
+    if(cookie?.value) {
+        const tabs = await chrome.tabs.query({active: true})
+        const { url } = tabs[0]
+        
+        await chrome.runtime.sendMessage({
+            bookmarkUrl: url,
+            journeysToken: cookie.value
+        }, (response) => {
+            console.log("resp", response)
+        })
+        console.log(url, cookie.value)
+    }
+    else {
+        handleButtonClick()
+    }
+}
+
+button.addEventListener('click', handleButtonClick)
+
+    
