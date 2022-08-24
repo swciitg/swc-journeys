@@ -19,11 +19,13 @@ const Bookmarks = () => {
 
   return (<>
     <CRow xs={{ cols: 1, gutter: 4 }} md={{ cols: 4 }}>
-      {bookmarks && bookmarks.map((book, index) => (
+      {bookmarks && bookmarks.length > 0 ? bookmarks.map((book, index) => (
         <div key={book.id} style={{ marginTop: '35px' }}>
           <BookmarkCard book={book} />
         </div>
-      ))}
+      ))
+        : "No items found"
+      }
     </CRow>
   </>);
 }
